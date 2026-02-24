@@ -1,0 +1,30 @@
+# %% [markdown]
+# # ITI123 Milestone Project: Real Estate Price Prediction (DNN)
+#
+# **Student Name:** FONG Siang Yi
+# **Student ID:** 8440104B
+#
+# ## 1. Setup and Initialization
+# Importing necessary libraries for data manipulation, preprocessing, and deep learning.
+
+# %%
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+import tensorflow as tf
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input, Dense, Dropout, BatchNormalization, Concatenate, Embedding, Flatten
+from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
+from tensorflow.keras.optimizers import Adam
+
+# Set random seed for reproducibility
+np.random.seed(42)
+tf.random.set_seed(42)
+
+print(f"TensorFlow Version: {tf.__version__}")
